@@ -30,7 +30,7 @@
         <!-- Member Verification Card -->
         <section class="profile-card">
             <div class="profile-picture-container">
-                <img src="{{ url_for('static', filename='images/' + cert.member_name + '.png') }}" alt="Profile Picture" class="profile-pic">
+                <img src="{{ cert.profile_image}}" alt="Profile Picture" class="profile-pic">
             </div>
             <div class="card-body">
                 <h1 class="member-name">{{ cert.member_name }}</h1>
@@ -60,8 +60,15 @@
 
         <!-- Page Footer -->
         <footer class="page-footer">
-            <p><a href="https://gdg.community.dev/gdg-on-campus-north-eastern-hill-university-shillong-india/" target="_blank">GDG on Campus NEHU Community</a></p>
-            <p class="creator-credit">Verification page created by [!! YOUR NAME HERE !!]</p>
+            <p>
+                <a href="https://gdg.community.dev/gdg-on-campus-north-eastern-hill-university-shillong-india/" target="_blank">
+                    GDG on Campus NEHU Community
+                </a>
+            </p>
+            <p class="creator-credit">
+                Verification page created by 
+                <a href="https://www.linkedin.com/in/soumojit-bhuin" target="_blank">Soumojit Bhuin</a>
+            </p>
         </footer>
         
     </main>
