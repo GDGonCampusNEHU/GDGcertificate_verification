@@ -1,0 +1,148 @@
+/* ==================================================================== */
+/*                   CLEAN & PROFESSIONAL REDESIGN                    */
+/* ==================================================================== */
+
+:root {
+    --bg-color: #f8f9fa; /* A very light, soft grey */
+    --card-bg-color: #ffffff;
+    --text-color: #212529; /* Dark charcoal for text */
+    --text-color-subtle: #6c757d; /* Grey for subtitles */
+    --accent-color: #0077b5; /* Professional blue (LinkedIn's color) */
+    --verified-color: #28a745; /* Green for the verified badge */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem; /* Spacing between sections */
+}
+
+.page-header img {
+    max-width: 300px;
+    
+}
+
+/* --- Profile Card --- */
+.profile-card {
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px var(--shadow-color);
+    width: 100%;
+    padding: 2rem;
+    padding-top: 80px; /* Space for the overlapping profile picture */
+    text-align: center;
+    position: relative;
+    margin-top: 60px;
+}
+
+.profile-picture-container {
+    position: absolute;
+    top: -60px; /* Pulls the image up */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid var(--card-bg-color);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    object-fit: cover;
+}
+
+.member-name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.member-team {
+    margin: 0.25rem 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-color-subtle);
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #eaf6ec;
+    color: var(--verified-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* --- Share & Certificate Display --- */
+.linkedin-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+.linkedin-button:hover {
+    background-color: #005e92;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 119, 181, 0.3);
+}
+
+.certificate-display {
+    width: 100%;
+    text-align: center;
+}
+.certificate-display h2 {
+    color: var(--text-color-subtle);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.certificate-image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px var(--shadow-color);
+}
+
+/* --- Footer --- */
+.page-footer {
+    text-align: center;
+    color: var(--text-color-subtle);
+}
+.page-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.page-footer a:hover {
+    text-decoration: underline;
+}
+.creator-credit {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    body { padding: 1rem; }
+    .container { gap: 2rem; }
+    .member-name { font-size: 1.5rem; }
+    .member-team { font-size: 1rem; }
+}
