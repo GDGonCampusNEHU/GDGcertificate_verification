@@ -17,7 +17,7 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 # This is the base URL for your future verification web page.
 # The QR code will point here. You will need to build a simple web app
 # at this address that can read the 'id' and verify it against Supabase.
-VERIFICATION_BASE_URL = "https://your-verification-website.com/verify"
+VERIFICATION_BASE_URL = "https://gdgcertificate-verification.vercel.app/verify"
 
 # Create a directory to store the generated QR codes
 OUTPUT_QR_DIR = "qr_codes"
@@ -26,19 +26,18 @@ os.makedirs(OUTPUT_QR_DIR, exist_ok=True)
 # --- GDG on Campus NEHU Core Team 2024-25 Data ---
 # Team members list updated from the official GDG community page.
 team_members = [
-    {"name": "Abhishek Kumar Rai", "team": "Organizer"},
-    {"name": "Aradhya Jha", "team": "Co-organizer"},
-    {"name": "Devanshi Sanganeria", "team": "Head, Event Management Team"},
-    {"name": "Anirudh Gupta", "team": "Head, Event Management Team"},
-    {"name": "Dibakar Patar", "team": "Head, Event Management Team"},
-    {"name": "Chandrasmita Gayan", "team": "Head, Event Management Team"},
-    {"name": "Sazeed Taj", "team": "Head, Media & Communication Team"},
-    {"name": "Bandeep Bhatta", "team": "Head, Outreach & Partnership Team"},
-    {"name": "Rideep Kumar Kakati", "team": "Head, Creative & Content Team"},
-    {"name": "SOUMOJIT BHUIN", "team": "Head, Creative & Content Team"},
-    {"name": "Kriti Meska", "team": "Head, Creative & Content Team"},
-    {"name": "Shiva Sai Naluvala", "team": "Head, Creative & Content Team"},
-    {"name": "Shekhar Pachlore", "team": "Head, Technical & Academics Team"}
+    {"name": "Abhishek Kumar Rai", "team": "Organizer","id":"7783750a-72ec-429e-9b78-25aca4d24f38"},
+    {"name": "Aradhya Jha", "team": "Co-organizer","id":"3e20a361-df55-417c-8039-b8f7c49a8baa"},
+    {"name": "Devanshi Sanganeria", "team": "Head, Event Management Team","id":"da281c8c-2c27-4e1c-a7c1-dde7ced5d7a4"},
+    {"name": "Anirudh Gupta", "team": "Head, Event Management Team","id":"253b82fe-bfed-405a-a817-e120b53582a7"},
+    {"name": "Dibakar Patar", "team": "Head, Event Management Team","id":"ac44a028-6c87-4008-b3d1-997f30f5c8e4"},
+    {"name": "Chandrasmita Gayan", "team": "Head, Event Management Team","id":"80e8a816-eae3-4106-a1cc-945139a726fa"},
+    {"name": "Sazeed Taj", "team": "Head, Media & Communication Team","id":"08063948-1f3f-4b75-ab4e-694481611661"},
+    {"name": "Bandeep Bhatta", "team": "Head, Outreach & Partnership Team","id":"eb573c62-0315-4502-bbcd-4568c43ce25d"},
+    {"name": "Rideep Kumar Kakati", "team": "Head, Creative & Content Team","id":"8dee7d5d-4586-4061-8691-d8b0d2548821"},
+    {"name": "SOUMOJIT BHUIN", "team": "Head, Creative & Content Team","id":"7b8e0d82-131d-4b91-a439-d7ffe5818583"},
+    {"name": "Shiva Sai Naluvala", "team": "Head, Creative & Content Team","id":"10e3ff4b-6c92-4925-8761-500828e37093"},
+    {"name": "Shekhar Pachlore", "team": "Head, Technical & Academics Team","id":"87b98cd4-1d6c-4be2-a30e-7631663ba898"}
 ]
 
 
@@ -61,7 +60,7 @@ def main():
     for member in team_members:
         member_name = member["name"]
         member_team = member["team"]
-        
+        id=member["id"]
         print(f"\nProcessing member: {member_name} ({member_team})")
 
         # 1. Generate a unique certificate ID
@@ -69,7 +68,7 @@ def main():
         print(f"  - Generated Certificate ID: {certificate_id}")
 
         # 2. Create the full verification URL
-        verification_url = f"{VERIFICATION_BASE_URL}?id={certificate_id}"
+        verification_url = f"{VERIFICATION_BASE_URL}/{id}"
         print(f"  - Verification URL: {verification_url}")
 
         # 3. Generate the QR Code
