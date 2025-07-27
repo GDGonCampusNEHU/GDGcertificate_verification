@@ -12,4 +12,6 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
-```    This will prevent your secret keys in `.env` from ever being uploaded to GitHub.
+
+# Local generated files - NOT needed for deployment
+qr_codes/
