@@ -13,9 +13,8 @@ base_dir = os.path.abspath(os.path.dirname(__file__))
 # Initialize Flask App
 app = Flask(
     __name__,
-    static_folder="static",
-    static_url_path="/static",
-    template_folder="templates"
+    static_folder=os.path.join(base_dir, 'static'),
+    template_folder=os.path.join(base_dir, 'templates')
 )
 
 # Initialize Supabase Client
