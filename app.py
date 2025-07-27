@@ -11,7 +11,7 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 # Initialize Flask App
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static', template_folder='templates')
 
 # Initialize Supabase Client
 try:
