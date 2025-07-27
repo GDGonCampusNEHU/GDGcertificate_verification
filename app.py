@@ -9,9 +9,13 @@ load_dotenv()
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
+base_dir = os.path.abspath(os.path.dirname(__file__))
 # Initialize Flask App
-app = Flask(__name__,static_folder='static', template_folder='templates')
+app = Flask(
+    __name__,
+    static_folder=os.path.join(base_dir, 'static'),
+    template_folder=os.path.join(base_dir, 'templates')
+)
 
 # Initialize Supabase Client
 try:
