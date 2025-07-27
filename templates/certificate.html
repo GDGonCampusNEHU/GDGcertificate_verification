@@ -17,20 +17,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
     <main class="container">
 
         <header class="page-header">
-            <img src="{{ url_for('static', filename='gdg_logo_placeholder.png') }}" alt="GDG on Campus NEHU Logo">
+            <img src="{{ url_for('static', filename='images/gdg_logo_placeholder.png') }}" alt="GDG on Campus NEHU Logo">
         </header>
 
         <!-- Member Verification Card -->
         <section class="profile-card">
             <div class="profile-picture-container">
-                <img src="{{ url_for('static', filename='images/member_placeholder.png') }}" alt="Profile Picture" class="profile-pic">
+                <img src="{{ url_for('static', filename='images/' + cert.member_name + '.png') }}" alt="Profile Picture" class="profile-pic">
             </div>
             <div class="card-body">
                 <h1 class="member-name">{{ cert.member_name }}</h1>
