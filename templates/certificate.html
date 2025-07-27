@@ -59,14 +59,17 @@
         </section>
 
         <!-- Page Footer -->
-       <section class="certificate-display">
-            <h2>Certificate of Appreciation</h2>
-            {% if cert.certificate_image_url and cert.certificate_image_url|length > 5 %}
-                <img src="{{ cert.certificate_image_url }}" alt="Certificate for {{ cert.member_name }}" class="certificate-image">
-            {% else %}
-                <p class="error-text">Certificate image could not be loaded.</p>
-            {% endif %}
-        </section>
+       <footer class="page-footer">
+            <p>
+                <a href="https://gdg.community.dev/gdg-on-campus-north-eastern-hill-university-shillong-india/" target="_blank">
+                    GDG on Campus NEHU Community
+                </a>
+            </p>
+            <p class="creator-credit">
+                Verification page created by 
+                <a href="https://www.linkedin.com/in/soumojit-bhuin" target="_blank">Soumojit Bhuin</a>
+            </p>
+        </footer>
         
     </main>
 
