@@ -1,0 +1,15 @@
+# Environment variables
+.env
+.venv
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+```    This will prevent your secret keys in `.env` from ever being uploaded to GitHub.

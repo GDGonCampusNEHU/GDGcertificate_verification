@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph Meta Tags for correct LinkedIn Sharing -->
+    <meta property="og:title" content="Verified: {{ cert.member_name }}"/>
+    <meta property="og:description" content="Certificate of Appreciation for their role as {{ cert.member_team }} at GDG on Campus NEHU."/>
+    <meta property="og:image" content="{{ cert.certificate_image_url }}"/>
+    <meta property="og:url" content="{{ request.url }}"/>
+    <meta property="og:type" content="website"/>
+    
+    <title>Verified: {{ cert.member_name }}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="page-header">
+            <img src="{{ url_for('static', filename='images/gdg_logo_placeholder.png') }}" alt="GDG on Campus NEHU Logo">
+        </header>
+
+        <!-- Member Verification Card -->
+        <section class="profile-card">
+            <div class="profile-picture-container">
+                <img src="{{ url_for('static', filename='images/member_placeholder.png') }}" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="card-body">
+                <h1 class="member-name">{{ cert.member_name }}</h1>
+                <p class="member-team">{{ cert.member_team }}</p>
+                <p class="verified-badge">
+                    <span class="badge-icon">✔</span> Verified Contributor
+                </p>
+            </div>
+        </section>
+
+        <!-- LinkedIn Share Button -->
+        <section class="share-section">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url | urlencode }}" target="_blank" class="linkedin-button">
+                Share Certificate on LinkedIn
+            </a>
+        </section>
+        
+        <!-- Certificate Image Display -->
+        <section class="certificate-display">
+            <h2>Certificate of Appreciation</h2>
+            {% if cert.certificate_image_url and cert.certificate_image_url|length > 5 %}
+                <img src="{{ cert.certificate_image_url }}" alt="Certificate for {{ cert.member_name }}" class="certificate-image">
+            {% else %}
+                <p class="error-text">Certificate image could not be loaded.</p>
+            {% endif %}
+        </section>
+
+        <!-- Page Footer -->
+        <footer class="page-footer">
+            <p><a href="https://gdg.community.dev/gdg-on-campus-north-eastern-hill-university-shillong-india/" target="_blank">GDG on Campus NEHU Community</a></p>
+            <p class="creator-credit">Verification page created by [!! YOUR NAME HERE !!]</p>
+        </footer>
+        
+    </main>
+
+</body>
+</html>
